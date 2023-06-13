@@ -1,6 +1,6 @@
-const { Events } = require('discord.js');
-const { userInfo } = require('./database-objects.js')
+// const { Events } = require('discord.js');
+// const { userInfo } = require('./database-objects.js')
 
-module.exports = {
-    name: Events.InteractionCreate,
-}
+// module.exports = {
+//     name: Events.InteractionCreate,
+// }
