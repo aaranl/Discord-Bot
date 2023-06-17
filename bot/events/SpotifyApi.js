@@ -1,3 +1,4 @@
+const { Events } = require('discord.js');
 const SpotifyWebApi = require('spotify-web-api-node');
 const { spotifyClientId, spotifyClientSecret } = require('../../config.json')
 
@@ -7,7 +8,7 @@ const spotifyApi = new SpotifyWebApi({
 });
 
 module.exports = {
-  name: 'ready',
+  name: Events.ClientReady,
   once: true,
   execute(client) {
     // Retrieve an access token
