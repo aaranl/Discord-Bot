@@ -22,7 +22,6 @@ app.get("/auth/discord/callback", passport.authenticate("discord", {
     res.redirect("http://localhost:3000/") //In the case of a success redirect the user to a new page 
 });
 
-//TODO: Find error that doesnt return it do the dashboard page.
 
 app.listen(port, () => console.log(`Server is running on port 4000`))
 
