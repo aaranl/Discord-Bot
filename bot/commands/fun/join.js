@@ -8,7 +8,7 @@ module.exports = {
 		.setDescription('Joins the call where the user is.'),
 
 	async execute(interaction) {
-        if (interaction.member.voice.channelId != undefined) {
+        if (interaction.member.voice.channelId != undefined)  { // Not the best way to do this
 		    const connection = joinVoiceChannel({
                 channelId: interaction.member.voice.channelId,
                 guildId: interaction.guildId,
