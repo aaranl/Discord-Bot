@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const { username, password } = require('./config.json');
+const { username, password } = require('../config.json');
 
 const sequelize = new Sequelize('discordbot', username, password, {
     host: 'localhost',
@@ -8,7 +8,7 @@ const sequelize = new Sequelize('discordbot', username, password, {
     storage: 'database.sqlite',
 });
 
-const userInfo = require('./models/users.js')(sequelize, Sequelize.DataTypes);
+const userInfo = require('./models/userInfo.js')(sequelize, Sequelize.DataTypes);
 
 module.exports = {
     userInfo
