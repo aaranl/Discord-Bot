@@ -1,12 +1,16 @@
-const { SlashCommandBuilder, CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
 const { joinVoiceChannel } = require('@discordjs/voice');
 
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('join')
-		.setDescription('Joins the call where the user is.'),
-
+        .setName('join')
+        .setDescription('Join a channel')
+        .addChannelOption(option => option.setName('channel')
+            .setDescription('The channel to join')
+            .addChannelTypes(ChannelType.GuildVoice)
+            .setRequired(true)
+    ),
 	async execute(interaction) {
         if (interaction.member.voice.channelId != undefined)  { // Not the best way to do this
 		    const connection = joinVoiceChannel({
@@ -18,7 +22,7 @@ module.exports = {
             });
         } else {
             await interaction.reply('You are not connected to a voice channel');
-        }
-        
+        }  
+
 	},
 };
