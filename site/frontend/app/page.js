@@ -9,7 +9,7 @@ export default function Home() {
 
       <div className={styles.description}>
         <p>
-          <Link href="https://ezbake.xyz/auth/discord">Login</Link>
+          <Link href="142.93.54.80/auth/discord">Login</Link>
         </p>
       </div>
 
