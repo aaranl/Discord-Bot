@@ -28,4 +28,7 @@ app.get("/auth/discord/callback", passport.authenticate("discord", {
 });
 
 app.listen(port, () => console.log(`Server is running on port 4000`))
+console.log(process.env.CLIENT_ID);
+console.log(process.env.CLIENT_SECRET);
+console.log(process.env.SESSION_SECRET);
 
