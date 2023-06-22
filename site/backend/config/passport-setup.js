@@ -21,6 +21,9 @@ passport.serializeUser((user, done) => {
     });
   });
 
+  console.log(process.env.CLIENT_ID);
+  console.log(process.env.CLIENT_SECRET);
+
   passport.use(
     new DiscordStrategy({
         clientID: process.env.CLIENT_ID,
