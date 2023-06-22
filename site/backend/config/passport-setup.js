@@ -25,7 +25,7 @@ passport.serializeUser((user, done) => {
     new DiscordStrategy({
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SESSION,
-        callbackURL: 'http://142.93.54.80/auth/discord/callback',
+        callbackURL: 'http://api.ezbake.xyz/auth/discord/callback',
         scope: ["bot", "identify"]
     },
     async(accessToken, refreshToken, profile, done) => {

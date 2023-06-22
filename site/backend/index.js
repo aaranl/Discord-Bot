@@ -5,7 +5,7 @@ const passport = require("passport");
 const passportFile = require("./config/passport-setup");
 const session = require('express-session');
 
-const port = 4000;
+const port = process.env.PORT;
 
 app.use(cors({
     origin: 'https://ezbake.xyz'
