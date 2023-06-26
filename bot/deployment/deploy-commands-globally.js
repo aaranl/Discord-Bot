@@ -1,3 +1,5 @@
+//TODO: Edit code to launch when bot is restarted so commands actually work.
+
 const { REST, Routes } = require('discord.js');
 const { clientId, token } = require('../../config.json');
 const fs = require('node:fs');
