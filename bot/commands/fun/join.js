@@ -1,6 +1,8 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { joinVoiceChannel } = require('@discordjs/voice');
 
+//TODO: Fix hard set channelId which makes it so the bot will just rejoin the channel the person was in orginally.
+
 
 module.exports = {
 	data: new SlashCommandBuilder()
