@@ -4,8 +4,10 @@ const cors = require('cors');
 const passport = require("passport");
 const passportFile = require("./config/passport-setup");
 const session = require('express-session');
-
 const port = process.env.PORT;
+
+
+//TODO: Rewrite entire backend code to give functionality to the token that is required in OAuth2
 
 app.use(cors({
     origin: 'https://ezbake.xyz'
