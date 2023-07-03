@@ -8,6 +8,7 @@ const port = process.env.PORT;
 
 
 //TODO: Rewrite entire backend code to give functionality to the token that is required in OAuth2
+//Look at discord backend documentation
 
 app.use(cors({
     origin: 'https://ezbake.xyz'
