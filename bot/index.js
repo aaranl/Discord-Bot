@@ -28,6 +28,8 @@ for (const folder of commandFolders) {
 
 //Code to read event files
 
+//TODO: Fix problem which the command files doesn't launch on startup. 
+
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
