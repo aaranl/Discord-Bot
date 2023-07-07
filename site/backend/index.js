@@ -30,6 +30,13 @@ app.get("/auth/discord/callback", passport.authenticate("discord", {
     res.redirect("https://ezbake.xyz") //In the case of a success redirect the user to a new page 
 });
 
+//Error catching middleware for any errors that aren't handled elsewhere
+
+app.use(function (err, req, res, next) {
+    console.error(err.stack); 
+    res.status(500).send('Something went wrong'); 
+  });
+
 app.listen(port, '0.0.0.0', () => console.log(`Server is running on port 4000`))
 // Debugging env variables
 // console.log(process.env.CLIENT_ID);
