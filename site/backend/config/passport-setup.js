@@ -28,7 +28,14 @@ passport.serializeUser((user, done) => {
         callbackURL: 'http://api.ezbake.xyz/auth/discord/callback',
         scope: ["bot", "identify"]
     },
-    async(accessToken, refreshToken, profile, done) => {
-        done(null,profile);
+    function(accessToken, refreshToken, profile, done) {
+        User.findOrCreate({ discordId : profile.id }, function (err, user) {
+          return cb(err,user);
+        });
     })
 )
+
+
+// async(accessToken, refreshToken, profile, done) => {
+//   done(null,profile);
+// })
