@@ -1,7 +1,6 @@
 const express = require('express');
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
-const {clientId , clientSecret, callbackURL} = require('../../config.json');
 
 const app = express();
 const port = process.env.port;
