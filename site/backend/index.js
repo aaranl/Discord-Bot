@@ -7,9 +7,9 @@ const app = express();
 const port = process.env.port;
 
 const client_id = process.env.CLIENT_ID;
-const client_secret = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
 const redirect_uri = process.env.REDIRECT_URI;
-const secret_key = process.env.SECRET_KEY
+const secret_key = process.env.SESSION_SECRET;
 
 app.get('/oauth/redirect', (req, res) => {
     const requestToken = req.query.code;
