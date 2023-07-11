@@ -10,6 +10,8 @@ const client_secret = process.env.CLIENT_SECRET;
 const redirect_uri = process.env.REDIRECT_URI;
 const secret_key = process.env.SESSION_SECRET;
 
+console.log(process.env.REDIRECT_URI);
+
 //TODO: This is not working its not linked correctly.
 
 app.get('/oauth/redirect', (req, res) => {
