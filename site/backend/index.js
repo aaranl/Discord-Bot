@@ -11,6 +11,8 @@ const redirect_uri = process.env.REDIRECT_URI;
 const secret_key = process.env.SESSION_SECRET;
 
 console.log(process.env.REDIRECT_URI);
+console.log(process.env.CLIENT_ID);
+console.log(process.env.CLIENT_SECRET);
 
 //TODO: This is not working its not linked correctly.
 
