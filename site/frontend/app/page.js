@@ -29,18 +29,18 @@ export default function Home() {
 //https://api.ezbake.xyz/auth/discord
 
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
+// export default function Home() {
+//   return (
+//     <main className={styles.main}>
 
-      <div className={styles.description}>
-        <p>
+//       <div className={styles.description}>
+//         <p>
           
-          <a href="https://api.ezbake.xyz/oauth/redirect">Login</a>
+//           <a href="https://api.ezbake.xyz/oauth/redirect">Login</a>
           
-        </p>
-      </div>
+//         </p>
+//       </div>
 
-    </main>
-  )
-}
+//     </main>
+//   )
+// }
