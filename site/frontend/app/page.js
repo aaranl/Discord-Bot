@@ -1,24 +1,6 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import styles from './page.module.css';
 
 export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router.query.code) {
-      // Send the code to your backend
-      fetch(`https://api.ezbake.xyz/oauth/redirect?code=${router.query.code}`)
-        .then(response => {
-          if (response.ok) {
-            console.log('Authorization successful');
-          } else {
-            console.error('Authorization failed');
-          }
-        });
-    }
-  }, [router.query.code]);
-
   const handleLogin = () => {
     // The redirect URI registered with Discord
     const redirectUri = encodeURIComponent('https://ezbake.xyz/callback');
