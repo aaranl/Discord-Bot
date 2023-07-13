@@ -1,50 +1,56 @@
+const { request } = require('undici');
 const express = require('express');
-const axios = require('axios');
-const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
-const app = express();
+
 const port = process.env.PORT;
-
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
-const redirect_uri = process.env.REDIRECT_URI;
 const secret_key = process.env.SESSION_SECRET;
+const frontendUrl = 'https://api.ezbake.xyz';
+const callbackRoute = '/auth/discord/callback';
 
 console.log(process.env.REDIRECT_URI);
 console.log(process.env.CLIENT_ID);
 console.log(process.env.CLIENT_SECRET);
 
-//TODO: This is not working its not linked correctly.
+const app = express();
 
-app.get('/oauth/redirect', (req, res) => {
-    const requestToken = req.query.code;
-    axios({
-        method: 'post',
-        url: `https://discord.com/api/oauth2/token`,
-        data: {
-            client_id,
-            client_secret,
-            grant_type: 'authorization_code',
-            code: requestToken,
-            redirect_uri,
-            scope: ['bot', 'identify']
-        },
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-    }).then(response => {
-        const accessToken = response.data.access_token;
-        const token = jwt.sign({ accessToken }, secret_key);
+app.use(cors({ origin: frontendUrl }));
 
-        // You may want to redirect your user to your website's dashboard, sending along the token.
-        res.redirect(`/dashboard?token=${token}`);
-    }).catch(error => {
-        console.error(error);
-        res.status(500).send('Error during Discord OAuth2');
-    });
+app.get(callbackRoute, async ({ query }, response) => {
+	const { code } = query;
+
+	if (code) {
+		try {
+			const tokenResponseData = await request('https://discord.com/api/oauth2/token', {
+				method: 'POST',
+				body: new URLSearchParams({
+					client_id: client_id,
+					client_secret: client_secret,
+					code,
+					grant_type: 'authorization_code',
+					redirect_uri: `${frontendUrl}${callbackRoute}`,
+					scope: 'identify',
+				}).toString(),
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
+			});
+
+			const oauthData = await tokenResponseData.body.json();
+
+			// Here you might want to do something with the OAuth data, like save it in a database
+			// or pass it to your frontend.
+
+			console.log(oauthData);
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	response.sendStatus(200);
 });
-
-app.listen(port, () => console.log(`Server listening at ${port}`));
 
 
 

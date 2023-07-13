@@ -16,6 +16,7 @@
     "jsonwebtoken": "^9.0.1",
     "passport": "^0.6.0",
     "passport-discord": "^0.1.4",
-    "passport-oauth2-refresh": "^2.2.0"
+    "passport-oauth2-refresh": "^2.2.0",
+    "undici": "^5.22.1"
   }
 }
