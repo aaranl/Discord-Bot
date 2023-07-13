@@ -1,17 +1,9 @@
 import styles from './page.module.css';
 
 export default function Home() {
-  // The redirect URI registered with Discord
-  const redirectUri = encodeURIComponent('https://ezbake.xyz/callback');
-
-  // The client ID of your Discord application
-  const clientId = 976699048134332496;
-
-  // Requesting bot scope with permissions
-  const permissions = 8;
 
   // The Discord authorization URL
-  const url = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=identify%20bot&permissions=${permissions}`;
+  const url = "https://discord.com/api/oauth2/authorize?client_id=976699048134332496&permissions=8&redirect_uri=https%3A%2F%2Fezbake.xyz&response_type=code&scope=identify%20bot";
 
   return (
     <main className={styles.main}>
