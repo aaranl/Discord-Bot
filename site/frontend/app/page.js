@@ -1,27 +1,38 @@
+import { useEffect } from 'react';
 import styles from './page.module.css';
 
 export default function Home() {
-  const handleLogin = () => {
-    // The redirect URI registered with Discord
-    const redirectUri = encodeURIComponent('https://ezbake.xyz/callback');
+  useEffect(() => {
+    const handleLogin = () => {
+      // The redirect URI registered with Discord
+      const redirectUri = encodeURIComponent('https://ezbake.xyz/callback');
 
-    // The client ID of your Discord application
-    const clientId = 976699048134332496;
+      // The client ID of your Discord application
+      const clientId = 976699048134332496;
 
-    // Requesting bot scope with permissions
-    const permissions = 8;
+      // Requesting bot scope with permissions
+      const permissions = 8;
 
-    // The Discord authorization URL
-    const url = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=identify%20bot&permissions=${permissions}`;
+      // The Discord authorization URL
+      const url = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=identify%20bot&permissions=${permissions}`;
 
-    // Redirect to Discord's authorization page
-    window.location.href = url;
-  };
+      // Redirect to Discord's authorization page
+      window.location.href = url;
+    };
+
+    const loginButton = document.getElementById('login-button');
+    loginButton.addEventListener('click', handleLogin);
+
+    // Cleanup function
+    return () => {
+      loginButton.removeEventListener('click', handleLogin);
+    };
+  }, []);
 
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <button onClick={handleLogin}>Login</button>
+        <button id='login-button'>Login</button>
       </div>
     </main>
   );
