@@ -10,9 +10,9 @@ const secret_key = process.env.SESSION_SECRET;
 const frontendUrl = 'https://api.ezbake.xyz';
 const callbackRoute = '/auth/discord/callback';
 
-console.log(process.env.REDIRECT_URI);
-console.log(process.env.CLIENT_ID);
-console.log(process.env.CLIENT_SECRET);
+// console.log(process.env.REDIRECT_URI);
+// console.log(process.env.CLIENT_ID);
+// console.log(process.env.CLIENT_SECRET);
 
 const app = express();
 
@@ -49,8 +49,12 @@ app.get(callbackRoute, async ({ query }, response) => {
 		}
 	}
 
-	response.sendStatus(200);
+	response.redirect('https://ezbake.xyz');
 });
+
+app.listen(port, () => {
+    console.log(`Server listening on ${port}`)
+})
 
 
 
