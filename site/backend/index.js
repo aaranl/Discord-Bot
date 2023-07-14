@@ -2,6 +2,7 @@ const { request } = require('undici');
 const express = require('express');
 const cors = require('cors');
 
+//Edit these to env variables so my code is completely anon. 
 
 const port = process.env.PORT;
 const client_id = process.env.CLIENT_ID;
