@@ -14,9 +14,17 @@ export default function Home() {
   
   return (
     <main className={styles.main}>
+      
+
+      <div className={styles.titleArea}>
+        <h1> Ezbake Bot </h1>
+      </div>
+
       <div className={styles.description}>
         <a href={url} className={styles.button}>Login</a>
       </div>
+
+
     </main>
   );
 }

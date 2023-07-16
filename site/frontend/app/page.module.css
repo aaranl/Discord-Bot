@@ -200,6 +200,11 @@
     );
     z-index: 1;
   }
+  .titleArea {
+    background-color: #f1f1f1; /* Set a background color for the title area */
+    padding: 20px; /* Add some padding to create space around the title */
+    margin-bottom: 20px; /* Add margin to separate the title area from the content below */
+  }
 }
 
 /* Tablet and Smaller Desktop */
