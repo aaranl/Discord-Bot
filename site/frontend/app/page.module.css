@@ -200,10 +200,40 @@
     );
     z-index: 1;
   }
-  .titleArea {
-    background-color: #f1f1f1; /* Set a background color for the title area */
-    padding: 20px; /* Add some padding to create space around the title */
-    margin-bottom: 20px; /* Add margin to separate the title area from the content below */
+  .taskbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navigation li {
+    margin-right: 10px;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+  }
+  
+  .login a {
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 4px;
   }
 }
 

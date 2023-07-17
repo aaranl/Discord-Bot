@@ -13,19 +13,26 @@ export default function Home() {
   //TOS
   
   return (
-    <main className={styles.main}>
-      
-
-      <div className={styles.titleArea}>
-        <h1> Ezbake Bot </h1>
+    <header className={styles.taskbar}>
+      <div className={styles.logo}>
+        <h1>Ezbake Bot</h1>
       </div>
-
-      <div className={styles.description}>
-        <a href={url} className={styles.button}>Login</a>
+      <nav className={styles.navigation}>
+        <ul>
+          <li>
+            <a href="#">Documentation</a>
+          </li>
+          <li>
+            <a href="#">Information</a>
+          </li>
+        </ul>
+      </nav>
+      <div className={styles.login}>
+        <a href={url} className={styles.button}>
+          Login
+        </a>
       </div>
-
-
-    </main>
+    </header>
   );
 }
 
