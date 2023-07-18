@@ -11,6 +11,7 @@ export default function Home() {
   //Documentation of the commands
   //Information about the permissions the bot is given, and the information the bot can attain from the server for the user.
   //TOS
+  //Make it look nice, look nice, feel nice
   
   return (
     <header className={styles.taskbar}>
