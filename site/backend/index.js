@@ -14,6 +14,7 @@ const callbackRoute = '/auth/discord/callback';
 // console.log(process.env.REDIRECT_URI);
 // console.log(process.env.CLIENT_ID);
 // console.log(process.env.CLIENT_SECRET);
+//Discord added new TOS stuff make sure my website is in line with it.
 
 const app = express();
 
