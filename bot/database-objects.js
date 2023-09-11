@@ -10,7 +10,8 @@ const sequelize = new Sequelize('discordbot', username, password, {
 
 const userInfo = require('./models/userInfo.js')(sequelize, Sequelize.DataTypes);
 
-//TODO: Figure out why it doesn't import in a users data when using the bot. 
+//TODO: Figure out why it doesn't import in a users data when using the bot.
+//Test deploy 
 
 module.exports = {
     userInfo
