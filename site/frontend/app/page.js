@@ -15,7 +15,7 @@ export default function Home() {
   //Look up some guide for CSS i really dont understand how it apply it properly.
   
   return (
-    
+
     <header className={styles.taskbar}>
       <div className={styles.logo}>
         <h1>Ezbake Bot</h1>
@@ -24,7 +24,7 @@ export default function Home() {
       <nav className={styles.navigation}>
         <ul>
           <li><a href ="/">Home</a></li>
-          <li><a hred ="/documentation">About</a></li>
+          <li><a href ="/documentation">About</a></li>
           <li><a href ="/information"></a></li>
 
         </ul>
