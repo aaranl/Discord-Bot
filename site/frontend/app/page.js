@@ -15,48 +15,27 @@ export default function Home() {
   //Look up some guide for CSS i really dont understand how it apply it properly.
   
   return (
+    
     <header className={styles.taskbar}>
       <div className={styles.logo}>
         <h1>Ezbake Bot</h1>
       </div>
+
       <nav className={styles.navigation}>
         <ul>
-          <li>
-            <a href="#">Documentation</a>
-          </li>
-          <li>
-            <a href="#">Information</a>
-          </li>
+          <li><a href ="/">Home</a></li>
+          <li><a hred ="/documentation">About</a></li>
+          <li><a href ="/information"></a></li>
+
         </ul>
       </nav>
+      
       <div className={styles.login}>
         <a href={url} className={styles.button}>
           Login
         </a>
       </div>
+
     </header>
   );
 }
-
-
-
-//TODO: Make a real frontend website that isnt just a button
-
-//https://api.ezbake.xyz/auth/discord
-
-
-// export default function Home() {
-//   return (
-//     <main className={styles.main}>
-
-//       <div className={styles.description}>
-//         <p>
-          
-//           <a href="https://api.ezbake.xyz/oauth/redirect">Login</a>
-          
-//         </p>
-//       </div>
-
-//     </main>
-//   )
-// }
