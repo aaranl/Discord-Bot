@@ -113,8 +113,8 @@
 
 .taskbar {
   display: flex;
-  justify-content: space-between;
-  align-items: right;
+  justify-content: flex-end;
+  align-items: center;
   background-color: #333; /* Add your desired background color */
   color: white; /* Add your desired text color */
   padding: 10px;
