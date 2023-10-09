@@ -117,8 +117,19 @@
   align-items: right;
   background-color: #333; /* Add your desired background color */
   color: white; /* Add your desired text color */
-  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-  padding: 10px 0;
+  padding: 10px;
+}
+
+.taskbar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the distance of the shadow line as needed */
+  width: 100%;
+  height: 5px; /* Adjust the height of the shadow line as needed */
+  background: rgba(0, 0, 0, 0.2); /* Shadow color and opacity */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Box shadow for the line */
 }
 
 .navigation ul {
