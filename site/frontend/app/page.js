@@ -8,12 +8,11 @@ export default function Home() {
     <header className={styles.taskbar}>
 
       <div className={styles.logo}>
-        <h1>Ezbake Bot</h1>
+        <h1><a href ="/">Ezbake Bot</a></h1>
       </div>
 
       <nav className={styles.navigation}>
         <ul>
-          <li><a href="/">Home</a></li>
           <li><a href="/documentation">About</a></li>
           <li><a href="/information">Information</a></li>
           <li><a href={url} className={styles.button}>Login</a></li>
@@ -22,6 +21,6 @@ export default function Home() {
 
     </header> 
 
-    
+
   );
 }
