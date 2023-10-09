@@ -6,6 +6,7 @@ export default function Home() {
 
   return (
     <header className={styles.taskbar}>
+
       <div className={styles.logo}>
         <h1>Ezbake Bot</h1>
       </div>
@@ -19,12 +20,7 @@ export default function Home() {
         </ul>
       </nav>
 
-      <div className={styles.login}>
-        <a href={url} className={styles.button}>
-          Login
-        </a>
-      </div>
-    </header>
+    </header> 
 
     
   );
