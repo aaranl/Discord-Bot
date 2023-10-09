@@ -25,7 +25,7 @@ export default function Home() {
         <ul>
           <li><a href ="/">Home</a></li>
           <li><a href ="/documentation">About</a></li>
-          <li><a href ="/information"></a></li>
+          <li><a href ="/information"></a>Information</li>
 
         </ul>
       </nav>
