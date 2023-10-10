@@ -122,7 +122,7 @@
 }
 
 .taskbar.fade {
-  background-color: var(--background-start-rgb);
+  background-color: var(--background-rgb);
 }
 
 /* try to add line under the taskbar as like a shadow effect */ 
