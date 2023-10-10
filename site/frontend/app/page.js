@@ -24,7 +24,7 @@ export default function Home() {
 
       <main>
         <div className = {styles.description}> 
-          {'blah blah blah'}
+          {'blah blah blahggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg'}
         </div>
       </main>
 
