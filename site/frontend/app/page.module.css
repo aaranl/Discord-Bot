@@ -145,16 +145,23 @@
   min-height: 100vh;
 }
 
-.centerPiece {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.centerPieceMain {
   font-size: 3rem;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono); 
   color: white;
+  height: 100vh;
+}
+
+.centerPieceSecondary {
+  font-size: 1.5rem;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono); 
+  color: gray;
   height: 100vh;
 }
 
