@@ -118,7 +118,6 @@
   background-color: #100c0c; /* Add your desired background color */
   color: white; /* Add your desired text color */
   padding: 10px;
-  transition: background-color 0.3s ease;
 }
 
 .taskbar-item {
@@ -131,7 +130,6 @@
 .navigation ul {
   list-style: none;
   display: flex;
-  gap: 20px;
 }
 
 .navigation li {

@@ -13,8 +13,8 @@ export default function Home() {
 
       <nav className={styles.navigation}>
         <ul>
-          <li><a href="/documentation" className={styles['taskbar-item']}>About</a></li>
-          <li><a href="/information" className={styles['taskbar-item']}>Information</a></li>
+          <li><a href="/documentation">About</a></li>
+          <li><a href="/information">Information</a></li>
           <li><a href={url} className={styles.button} >Login</a></li>
         </ul>
       </nav>
