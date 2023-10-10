@@ -177,7 +177,7 @@
 }
 
 .loginButton {
-  background-color: #4CAF50; /* Green */
+  background-color: #261a7b; /* Green */
   border: none;
   color: white;
   padding: 30px 64px;
@@ -186,12 +186,12 @@
   display: inline-block;
   font-size: 32px;  
   transition-duration: 0.4s;
-  border-radius: 25%;
+  border-radius: 30px;
   margin:10px
 }
 
 .loginButton:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #ccc; /* Green */
   color: white;
   
 }
