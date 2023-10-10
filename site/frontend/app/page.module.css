@@ -107,9 +107,6 @@
 
 /* added code */
 
-.logo {
-  position: relative;
-}
 
 .taskbar {
   display: flex;
@@ -120,11 +117,10 @@
   padding: 10px;
 }
 
-.taskbar-item {
-  position:absolute;
-  bottom:5px;
+.logo {
+  position: relative;
+  
 }
-
 
 .navigation ul {
   list-style: none;
