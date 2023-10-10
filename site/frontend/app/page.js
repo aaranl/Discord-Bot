@@ -23,9 +23,8 @@ export default function Home() {
       </header> 
 
       <main>
-        <div> 
-          <p>aopdawdkwopdkwd</p>
-
+        <div className = {styles.description}> 
+          {'blah blah blah'}
         </div>
       </main>
 
