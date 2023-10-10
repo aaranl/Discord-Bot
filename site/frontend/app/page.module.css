@@ -114,15 +114,16 @@
 .taskbar {
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: flex-end;
   background-color: #100c0c; /* Add your desired background color */
   color: white; /* Add your desired text color */
   padding: 10px;
   transition: background-color 0.3s ease;
 }
 
-.taskbar.fade {
-  background-color: var(--background-rgb);
+.taskbar-item {
+  position:absolute;
+  bottom:5px;
 }
 
 /* try to add line under the taskbar as like a shadow effect */ 

@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     //<header className={`${styles.taskbar} fade`}>
-    <header className={styles.taskbar}>
+    <header className={`${styles.taskbar} item`}>
 
       <div className={styles.logo}>
         <h1><a href ="/">Ezbake Bot</a></h1>
