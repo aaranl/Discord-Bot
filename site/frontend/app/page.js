@@ -24,7 +24,7 @@ export default function Home() {
 
       <main>
         <div> 
-          <text>awdmwdwd</text>
+          <p>aopdawdkwopdkwd</p>
 
         </div>
       </main>
