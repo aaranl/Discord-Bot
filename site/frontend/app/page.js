@@ -33,9 +33,9 @@ export default function Home() {
         </div>
         
         <button className ={styles.loginButton}> 
-          Login
+          <a href={url} className={styles.button}>Login</a>
         </button>
-        
+
       </main>
 
     </div>
