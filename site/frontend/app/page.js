@@ -16,14 +16,14 @@ export default function Home() {
           <ul>
             <li><a href="/documentation">About</a></li>
             <li><a href="/information">Information</a></li>
-            <li><a href={url} className={styles.button} >Login</a></li>
+            <li><a href={url} className={styles.button}>Login</a></li>
           </ul>
         </nav>
 
       </header> 
 
       <main className = {styles.centerPieceContainer}>
-        
+
         <div className = {styles.centerPiece}> 
           {'Play high quality music in \nyour Discord server for free.'}
         </div>
@@ -31,6 +31,11 @@ export default function Home() {
         <div className = {styles.centerPieceSecondary}>
           {'Rocking over 7 million servers.'}
         </div>
+        
+        <button className ={styles.loginButton}> 
+          Login
+        </button>
+        
       </main>
 
     </div>
