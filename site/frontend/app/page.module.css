@@ -140,6 +140,7 @@
 
 .centerPieceContainer {
   display: flex;
+  flex-direction: column; 
   justify-content: center; 
   align-items: center; 
   min-height: 100vh;
@@ -155,7 +156,9 @@
   z-index: 2;
   font-family: var(--font-mono); 
   color: white;
-  height: 100vh;
+  text-align: center;
+  height: auto;
+  margin:10px
 }
 
 .centerPieceSecondary {
@@ -168,7 +171,9 @@
   z-index: 2;
   font-family: var(--font-mono); 
   color: gray;
-  height: 100vh;
+  text-align: center;
+  height: auto;
+  margin:10px
 }
 
 
