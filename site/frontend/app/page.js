@@ -22,7 +22,7 @@ export default function Home() {
 
       </header> 
 
-      <main>
+      <main className = {styles.centerPieceContainer}>
         <div className = {styles.centerPiece}> 
           {'Play high quality music in your Discord server for free.'}
         </div>
