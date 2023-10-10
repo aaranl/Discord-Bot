@@ -32,9 +32,11 @@ export default function Home() {
           {'Rocking over 7 million servers.'}
         </div>
         
-        <button className ={styles.loginButton}> 
-          <a href={url} className={styles.button}>Invite to Server</a>
-        </button>
+
+        <a href={url} className={styles.loginButton}>
+          Invite to Server
+        </a>
+
 
       </main>
 
