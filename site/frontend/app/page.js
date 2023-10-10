@@ -23,8 +23,8 @@ export default function Home() {
       </header> 
 
       <main>
-        <div className = {styles.description}> 
-          {'blah blah blahggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg'}
+        <div className = {styles.centerPiece}> 
+          {'Play high quality music in your Discord server for free.'}
         </div>
       </main>
 
