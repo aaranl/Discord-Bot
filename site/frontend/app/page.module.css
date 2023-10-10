@@ -145,7 +145,10 @@
   min-height: 100vh;
 }
 
-.centerPieceMain {
+.centerPiece {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 3rem;
   max-width: var(--max-width);
   width: 100%;
@@ -156,6 +159,9 @@
 }
 
 .centerPieceSecondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   max-width: var(--max-width);
   width: 100%;

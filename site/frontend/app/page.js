@@ -23,9 +23,11 @@ export default function Home() {
       </header> 
 
       <main className = {styles.centerPieceContainer}>
+        
         <div className = {styles.centerPiece}> 
           {'Play high quality music in \nyour Discord server for free.'}
         </div>
+
         <div className = {styles.centerPieceSecondary}>
           {'Rocking over 7 million servers.'}
         </div>
