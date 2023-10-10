@@ -8,8 +8,9 @@
   --foreground-rgb: 0, 0, 0;
   /* --background-rgb: 44, 42, 49; */
 
-  --background-start-rgb: 44, 42, 49;
-  --background-end-rgb: 16, 12, 12;
+  --background-start-rgb: 16, 12, 12;
+  --background-end-rgb: 44, 42, 49;
+
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -87,6 +88,7 @@
 
 html,
 body {
+  height: 100%; 
   max-width: 100vw;
   overflow-x: hidden;
 }
