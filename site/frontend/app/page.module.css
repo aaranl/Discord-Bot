@@ -118,6 +118,11 @@
   background-color: #100c0c; /* Add your desired background color */
   color: white; /* Add your desired text color */
   padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.taskbar.fade {
+  background-color: var(--background-start-rgb);
 }
 
 /* try to add line under the taskbar as like a shadow effect */ 
