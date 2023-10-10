@@ -33,7 +33,7 @@ export default function Home() {
         </div>
         
         <button className ={styles.loginButton}> 
-          <a href={url} className={styles.button}>Login</a>
+          <a href={url} className={styles.button}>Invite to Server</a>
         </button>
 
       </main>
