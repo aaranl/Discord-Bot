@@ -1,4 +1,5 @@
 import styles from './page.module.css';
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -15,8 +16,8 @@ export default function Home() {
 
         <nav className={styles.navigation}>
           <ul>
-            <li><a href="/documentation">About</a></li>
-            <li><a href="/information">Information</a></li>
+            <li><Link href="/about"><a>About</a></Link></li>
+            <li><Link href="/information"><a>Information</a></Link></li>
             <li><a href={url} className={styles.button}>Login</a></li>
           </ul>
         </nav>
