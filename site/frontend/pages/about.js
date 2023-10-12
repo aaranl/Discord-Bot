@@ -10,7 +10,7 @@ export default function About() {
       <header className={styles.taskbar}>
 
         <div className={styles.logo}>
-          <h1><a href ="/">Ezbake Bot</a></h1>
+          <h1><Link href ="/"><a>Ezbake Bot</a></Link></h1>
         </div>
 
         <nav className={styles.navigation}>
