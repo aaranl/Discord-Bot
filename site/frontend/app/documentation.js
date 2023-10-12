@@ -1,5 +1,4 @@
 import styles from './page.module.css';
-import Link from 'next/link';
 
 export default function Home() {
   // The Discord authorization URL
@@ -10,13 +9,13 @@ export default function Home() {
       <header className={styles.taskbar}>
 
         <div className={styles.logo}>
-          <h1><Link href ="/">Ezbake Bot</Link></h1>
+          <h1><a href ="/">Ezbake Bot</a></h1>
         </div>
 
         <nav className={styles.navigation}>
           <ul>
-            <li><Link href="/documentation">About</Link></li>
-            <li><Link href="/information">Information</Link></li>
+            <li><a href="/documentation">About</a></li>
+            <li><a href="/information">Information</a></li>
             <li><a href={url} className={styles.button}>Login</a></li>
           </ul>
         </nav>
