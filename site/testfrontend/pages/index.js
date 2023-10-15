@@ -11,7 +11,7 @@ export default function Home() {
       <header className={styles.taskbar}>
 
         <div className={styles.logo}>
-          <h1><a href ="/">Ezbake Bot</a></h1>
+          <h1><Link href ="/">Ezbake Bot</Link></h1>
         </div>
 
         <nav className={styles.navigation}>
