@@ -14,7 +14,6 @@ module.exports = {
                     
                 )
         )
-
         .addSubcommand(subcommand =>
             subcommand.setName("options")
                 .setDescription("Select an option.")
