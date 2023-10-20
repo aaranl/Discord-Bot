@@ -2,7 +2,25 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require ('discord.js');
 const { token } = require('../config.json');
-const client = new Client ({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client ({ 
+	intents: 
+		[GatewayIntentBits.Guilds,
+    	GatewayIntentBits.GuildVoiceStates]
+ });
+
+
+const {DisTube} = require('distube');
+const {SpotifyPlugin} = require('@distube/spotify');
+
+client.distube = new DisTube(client, {
+	emitNewSongOnly: true,
+	plugins: [new SpotifyPlugin()],
+	leaveOnFinish: true,
+	leaveOnEmpty: true,
+	leaveOnStop: true,
+	emptyCooldown: 0,
+	emitAddSongWhenCreatingQueue: false
+});
 
 
 //Code to read command Files
@@ -42,6 +60,8 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
+
+module.exports = client;
 
 //Client login 
 

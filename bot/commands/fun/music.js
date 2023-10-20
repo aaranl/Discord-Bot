@@ -14,7 +14,6 @@ module.exports = {
                     
                 )
         )
-
         .addSubcommand(subcommand =>
             subcommand.setName("options")
                 .setDescription("Select an option.")
@@ -46,7 +45,7 @@ module.exports = {
                 return interaction.reply({ embeds: [embed], ephemeral: true});
             }
             
-            if(!member.voice.channelId == guild.member.me.voice.channelId) {
+            if(!member.voice.channelId == interaction.member.me.voice.channelId) {
                 embed.setColor("Red").setDescription(`You can't use the music player as it is already active in <#${guild.members.me.voice.channelId}`);
                 return interaction.reply({ embeds: [embed], ephemeral: true});
             }
