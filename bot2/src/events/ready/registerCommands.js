@@ -1,3 +1,5 @@
+require("colors");
+
 const {testServerId} = require("../../config.json");
 const commandComparing = require("../../utils/commandComparing.js");
 const getApplicationCommands = require("../../utils/getApplicationCommands.js");
@@ -18,8 +20,45 @@ module.exports = async (client) => {
                 description: commandDescription,
                 options: commandOptions,
             } = data;
-        }
-    } catch {
+        
 
+            const existingCommand = await applicationCommands.cache.find(
+                (cmd) => cmd.name === commandName
+            );
+
+            if (deleted) {
+                if(existingCommand) {
+                    await applicationCommands.delete(existingCommand.id);
+                    console.log(
+                        `[COMMAND REGISTERY] Application command ${commandName} was deleted from the database`
+                        .red
+                    );
+                    } else {
+                    console.log(
+                        `[COMMAND REGISTERY] Application command ${commandName} has been skipped, since property "deleted" is set to "true"`
+                        .grey
+                    );
+                }
+            } else if (existingCommand) {
+                if(commandComparing(existingCommand, commandOptions)) {
+                    await applicationCommands.edit(existingCommand.id,{name : commandName, description: commandDescription, options: commandOptions});
+                    console.log(
+                        `[COMMAND REGISTERY] Application command ${commandName} has been edited.`
+                        .orange
+                    );
+                }
+            } else {
+                await applicationCommands.create({name: commandName, description: commandDescription, options: commandOptions});
+                console.log(
+                    `[COMMAND REGISTERY] Application command ${commandName} has been registered.`
+                    .green
+                );
+            }
+        }
+    } catch (error) {
+        console.log(
+            `An error occured inside the command registery:\n ${error}`
+            .red
+        );
     }
 }
