@@ -5,39 +5,39 @@ module.exports = {
     .setName("test")
     .setDescription("test")
     .setDMPermission(false)
-    .addSubCommmand((subcommandgroup) => 
+    .addSubcommandGroup((subcommandgroup) => 
       subcommandgroup
         .setName("user")
         .setDescription("Configure a user.")
-        .addSubCommmand((subcommand) => 
+        .addSubcommand((subcommand) => 
           subcommand
             .setName("role")
             .setDescription("Configure a users role.")
-            .addUserOptions((option) =>
+            .addUserOption((option) =>
                 option.setName("user").setDescription("The user to configure.")
             )
         )
-        .addSubCommmand((subcommand) => 
+        .addSubcommand((subcommand) => 
           subcommand
             .setName("nickname")
             .setDescription("Configure a users nickname.")
-            .addUserOptions((option) =>
+            .addUserOption((option) =>
                 option.setName("nickname").setDescription("The nickname the user should have.")
             )
-            .addUserOptions((option) =>
+            .addUserOption((option) =>
                 option.setName("user").setDescription("The user to configure.")
             )
         )
     
     )
-    .addSubCommmand((subcommand) => 
+    .addSubcommand((subcommand) => 
       subcommand
-        .setName("m essage")
+        .setName("message")
         .setDescription("Configure a message.")
     )
     .toJSON(),
-    userPermissions: [PermissionFlagBits.ManageMessages],
-    botPermissision: [PermissionFlagBits.Connect],
+    //userPermissions: [PermissionFlagBits.ManageMessages],
+    //botPermissision: [PermissionFlagBits.Connect],
 
     run: (client, interaction) => {
         return interaction.reply("This is a test command.");

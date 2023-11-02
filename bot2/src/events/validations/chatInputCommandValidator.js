@@ -1,55 +1,68 @@
-const {EmbedBuilder} = require ('discord.js');
-const {developersId, testServerId} = require('../../config.json');
-const nConfig = require('../../messageConfig.json');
-const getLocalCommands = require("../../utils/getLocalCommands.js");
+require("colors");
 
-module.exports = async (client,interaction) => {
-    if (!interaction.isChatInputCommmand) return;
+const { EmbedBuilder } = require("discord.js");
+const { developersId, testServerId } = require("../../config.json");
+const mConfig = require("../../messageConfig.json");
+const getLocalCommands = require("../../utils/getLocalCommands");
 
-    const localCommands = getLocalCommands();
-    const commandObjects = localCommands.find((cmd) => cmd.data.name === interaction.commandName);
+module.exports = async (client, interaction) => {
+  if (!interaction.isChatInputCommand()) return;
+  const localCommands = getLocalCommands();
 
+  try {
+    const commandObject = localCommands.find((cmd) => cmd.data.name === interaction.commandName);
     if (!commandObject) return;
 
-    const createEmbed = (color, description) => new EmbedBuilder().setColor(color).setDescription(description);
+    if (commandObject.devOnly) {
+      if (!developersId.includes(interaction.member.id)) {
+        const rEmbed = new EmbedBuilder()
+          .setColor(`${mConfig.embedColorError}`)
+          .setDescription(`${mConfig.commandDevOnly}`);
+        interaction.reply({ embeds: [rEmbed], ephemeral: true });
+        return;
+      };
+    };
 
-    if(commandObjects.devOnly && !developersId.includes(interaction.member.id)) {
-        const rEmbed = createEmbed(nConfig.embedColorError, nConfig.commandDevOnly);
-        return interaction.reply({ embeds: [rEmbed], ephemeral: true });
-    }
+    if (commandObject.testMode) {
+      if (interaction.guild.id !== testServerId) {
+        const rEmbed = new EmbedBuilder()
+          .setColor(`${mConfig.embedColorError}`)
+          .setDescription(`${mConfig.commandTestMode}`);
+        interaction.reply({ embeds: [rEmbed], ephemeral: true });
+        return;
+      };
+    };
 
-    if(commandObjects.testMode && interaction.guild.id !== testServerId) {
-        const rEmbed = createEmbed(nConfig.embedColorError, nConfig.commandTestMode);
-        return interaction.reply({ embeds: [rEmbed], ephemeral: true });
-    }
+    if (commandObject.userPermissions?.length) {
+      for (const permission of commandObject.userPermissions) {
+        if (interaction.member.permissions.has(permission)) {
+          continue;
+        };
+        const rEmbed = new EmbedBuilder()
+          .setColor(`${mConfig.embedColorError}`)
+          .setDescription(`${mConfig.userNoPermissions}`);
+        interaction.reply({ embeds: [rEmbed], ephemeral: true });
+        return;
+      };
+    };
 
-    for (const permission of commandObjects.userPermissions || []) {
-        if(!interaction.member.permissions.has(permissions)) {
-            const rEmbed = createEmbed(
-                nConfig.embedColorError, 
-                nConfig.userNoPermissions
-            );
-            return interaction.reply({ embeds: [rEmbed], ephemeral: true });
-        }
-    }
+    if (commandObject.botPermissions?.length) {
+      for (const permission of commandObject.botPermissions) {
+        const bot = interaction.guild.members.me;
+        if (bot.permissions.has(permission)) {
+          continue;
+        };
+        const rEmbed = new EmbedBuilder()
+          .setColor(`${mConfig.embedColorError}`)
+          .setDescription(`${mConfig.botNoPermissions}`);
+        interaction.reply({ embeds: [rEmbed], ephemeral: true });
+        return;
+      };
+    };
 
-    const bot = interaction.guild.members.me;
-    for(const permission of commandObject.botPermissions || []) {
-        if(!bot.member.permissions.has(permissions)) {
-            const rEmbed = createEmbed(
-                nConfig.embedColorError, 
-                nConfig.botNoPermissions
-            );
-            return interaction.reply({ embeds: [rEmbed], ephemeral: true });
-        }
-
-        try {
-            await commandObjects.run(client, interaction);
-        } catch (error) {
-            console.log(
-                `An error occured inside the chat Input Command Validator:\n ${error}`
-                .red
-            )
-        }
-    }
+    await commandObject.run(client, interaction);
+  } catch (err) {
+    console.log(`An error occurred! ${err}`.red);
+    console.log(err);
+  };
 };

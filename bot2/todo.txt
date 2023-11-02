@@ -1,0 +1,12 @@
+#src/commands/misc/exampleCommand
+    L 39-40 Commented Out, Causing Bugs
+    TypeError: Cannot read properties of undefined (reading 'ManageMessages')
+    TypeError: Cannot read properties of undefined (reading 'Connect')
+
+    Affecting a .json file exporter which will be crucial when using mongoDB.
+
+#src/index
+    L 9-12 Commented Out, Causing Bugs
+    Error: Used disallowed intents      
+
+    This is required to be fixed I need to use intents to build the rest of the bot.

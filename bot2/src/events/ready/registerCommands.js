@@ -9,7 +9,7 @@ module.exports = async (client) => {
     try {
         const [localCommands, applicationCommands] = await Promise.all([
             getLocalCommands(),
-            getApplicationCommands(client, testServer),
+            getApplicationCommands(client, testServerId),
         ]);
     
 
@@ -40,7 +40,7 @@ module.exports = async (client) => {
                     );
                 }
             } else if (existingCommand) {
-                if(commandComparing(existingCommand, commandOptions)) {
+                if(commandComparing(existingCommand, localCommand)) {
                     await applicationCommands.edit(existingCommand.id,{name : commandName, description: commandDescription, options: commandOptions});
                     console.log(
                         `[COMMAND REGISTERY] Application command ${commandName} has been edited.`
