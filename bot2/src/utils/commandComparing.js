@@ -1,4 +1,4 @@
-module.exports = (existingCommand, localCommands) => {
+module.exports = (existingCommand, localCommand) => {
     const {
         name: existingName, 
         description: existingDescription, 

@@ -40,6 +40,6 @@ module.exports = {
     //botPermissision: [PermissionFlagBits.Connect],
 
     run: (client, interaction) => {
-        return interaction.reply("This is a test command.");
+        return interaction.reply("This is a cool command.");
     }
 };
