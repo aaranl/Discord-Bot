@@ -11,16 +11,18 @@ export default function Home() {
       <header className={styles.taskbar}>
 
         <div className={styles.logo}>
-          <h1><Link href ="/">Ezbake Bot</Link></h1>
+          <h1><Link href ="/Discord-Bot/home">Ezbake Bot</Link></h1>
         </div>
 
         <nav className={styles.navigation}>
           <ul>
-            <li><Link href="/about"><a>About</a></Link></li>
-            <li><Link href="/information"><a>Information</a></Link></li>
+            <li><Link href="/about" >About</Link></li>
+            <li><Link href="/information" >Information</Link></li>
             <li><a href={url} className={styles.button}>Login</a></li>
           </ul>
         </nav>
+
+        <title> Ezbake Bot </title>
 
       </header> 
 
